@@ -1,5 +1,5 @@
 name: Copilot Supervisor Bridge
-version: "0.1.0"
+version: "0.1.2"
 slug: copilot_supervisor_bridge
 description: Narrowly scoped Supervisor bridge for Copilot administration
 url: https://github.com/armandvdwalt01/ha-copilot-supervisor-bridge
@@ -13,6 +13,7 @@ arch:
   - armhf
   - i386
 hassio_api: true
+hassio_role: manager
 homeassistant_api: true
 host_network: true
 ports:

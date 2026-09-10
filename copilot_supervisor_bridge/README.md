@@ -1,8 +1,9 @@
 # Copilot Supervisor Bridge
 
 This is a custom Home Assistant add-on scaffold for controlled Supervisor
-operations. It declares `hassio_api: true`, but it does not expose the
-Supervisor token to SSH or to clients.
+operations. It declares `hassio_api: true` with the `manager` Supervisor role;
+the Supervisor token remains inside the add-on and is never exposed to SSH or
+clients.
 
 ## Installation
 
