@@ -10,6 +10,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 
 TOKEN = os.environ["BRIDGE_ACCESS_TOKEN"]
+SUPERVISOR_TOKEN = os.environ["SUPERVISOR_TOKEN"]
 SUPERVISOR = "http://supervisor"
 FLAGS = {
     "restart_core": os.environ["ALLOW_CORE_RESTART"] == "true",
@@ -21,7 +22,14 @@ FLAGS = {
 
 
 def supervisor(path: str, method: str = "GET", body: bytes | None = None) -> tuple[int, str]:
-    command = ["curl", "-sS", "-X", method, "-H", f"Authorization: Bearer {TOKEN}"]
+    command = [
+        "curl",
+        "-sS",
+        "-X",
+        method,
+        "-H",
+        f"Authorization: Bearer {SUPERVISOR_TOKEN}",
+    ]
     if body is not None:
         command.extend(["-H", "Content-Type: application/json", "--data-binary", "@-"])
     command.append(f"{SUPERVISOR}{path}")

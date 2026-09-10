@@ -2,6 +2,7 @@
 set -euo pipefail
 
 export BRIDGE_ACCESS_TOKEN="$(bashio::config 'access_token')"
+export SUPERVISOR_TOKEN="${SUPERVISOR_TOKEN:?Supervisor token was not injected}"
 export ALLOW_CORE_RESTART="$(bashio::config 'allow_core_restart')"
 export ALLOW_APP_MANAGEMENT="$(bashio::config 'allow_app_management')"
 export ALLOW_BACKUP_RESTORE="$(bashio::config 'allow_backup_restore')"
