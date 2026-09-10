@@ -1,0 +1,35 @@
+name: Copilot Supervisor Bridge
+version: "0.1.0"
+slug: copilot_supervisor_bridge
+description: Narrowly scoped Supervisor bridge for Copilot administration
+url: https://github.com/home-assistant/addons
+startup: services
+boot: auto
+init: false
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+  - i386
+hassio_api: true
+homeassistant_api: true
+host_network: true
+ports:
+  8126/tcp: 8126
+ports_description:
+  8126/tcp: Copilot Supervisor Bridge API
+options:
+  access_token: ""
+  allow_core_restart: true
+  allow_app_management: true
+  allow_backup_restore: true
+  allow_log_read: true
+  allow_hacs_management: true
+schema:
+  access_token: password
+  allow_core_restart: bool
+  allow_app_management: bool
+  allow_backup_restore: bool
+  allow_log_read: bool
+  allow_hacs_management: bool
