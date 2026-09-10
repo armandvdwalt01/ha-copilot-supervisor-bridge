@@ -67,7 +67,7 @@ class Handler(BaseHTTPRequestHandler):
             if not FLAGS["log_read"]:
                 self._json(403, {"error": "log access disabled"})
                 return
-            _, output = supervisor("/logs")
+            _, output = supervisor("/core/logs")
             self._json(200, {"raw": output})
             return
         self._json(404, {"error": "not found"})
