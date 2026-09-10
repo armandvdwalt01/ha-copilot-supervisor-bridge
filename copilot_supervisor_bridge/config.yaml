@@ -2,7 +2,7 @@ name: Copilot Supervisor Bridge
 version: "0.1.0"
 slug: copilot_supervisor_bridge
 description: Narrowly scoped Supervisor bridge for Copilot administration
-url: https://github.com/home-assistant/addons
+url: https://github.com/armandvdwalt01/ha-copilot-supervisor-bridge
 startup: services
 boot: auto
 init: false
